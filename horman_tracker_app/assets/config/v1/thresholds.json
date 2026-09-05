@@ -1,0 +1,1 @@
+{"configVersion":"1.0.0","review":"pending_no_doctor","thresholds":{"lowMax":40,"balancedMax":70},"confidence":{"manualOnly":"low","withWearable":"medium","withHistory7d":"high"},"decayHalfLifeHours":18,"baseline":50}

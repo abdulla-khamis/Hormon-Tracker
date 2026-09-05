@@ -1,0 +1,9 @@
+# Launcher icon config. Source: owner's "Hormon Tracker icon.png"
+# copied to assets/images/app_icon_source.png (1254x1254).
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/app_icon_source.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/images/app_icon_source.png"
+  remove_alpha_ios: true

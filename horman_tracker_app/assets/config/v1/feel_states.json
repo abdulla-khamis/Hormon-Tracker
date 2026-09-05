@@ -1,0 +1,123 @@
+{
+ "configVersion": "1.0.0",
+ "review": "pending_no_doctor",
+ "feelings": [
+  "anxious",
+  "low_energy",
+  "cant_focus",
+  "sad",
+  "irritable",
+  "craving_sugar",
+  "cant_sleep",
+  "motivated",
+  "calm",
+  "energetic"
+ ],
+ "typicalPatterns": {
+  "anxious": {
+   "cortisol": 82,
+   "adrenaline": 78,
+   "serotonin": 34,
+   "gaba": 30,
+   "dopamine": 45,
+   "oxytocin": 40,
+   "endorphins": 42,
+   "melatonin": 45,
+   "energy_sex": 48,
+   "appetite": 60
+  },
+  "cant_sleep": {
+   "melatonin": 25,
+   "cortisol": 72,
+   "dopamine": 60,
+   "serotonin": 38,
+   "adrenaline": 62,
+   "gaba": 35,
+   "oxytocin": 45,
+   "endorphins": 45,
+   "energy_sex": 48,
+   "appetite": 58
+  },
+  "low_energy": {
+   "dopamine": 30,
+   "serotonin": 35,
+   "endorphins": 32,
+   "cortisol": 55,
+   "energy_sex": 35,
+   "melatonin": 45,
+   "oxytocin": 45,
+   "gaba": 45,
+   "adrenaline": 40,
+   "appetite": 55
+  },
+  "post_workout_glow": {
+   "endorphins": 85,
+   "dopamine": 80,
+   "serotonin": 72,
+   "cortisol": 35,
+   "gaba": 65,
+   "oxytocin": 60,
+   "melatonin": 55,
+   "energy_sex": 68,
+   "adrenaline": 45,
+   "appetite": 45
+  },
+  "lonely_weekend": {
+   "oxytocin": 28,
+   "serotonin": 35,
+   "dopamine": 38,
+   "endorphins": 40,
+   "cortisol": 60,
+   "gaba": 45,
+   "melatonin": 48,
+   "energy_sex": 45,
+   "adrenaline": 45,
+   "appetite": 55
+  },
+  "exam_panic": {
+   "cortisol": 88,
+   "adrenaline": 85,
+   "serotonin": 30,
+   "gaba": 28,
+   "dopamine": 50,
+   "melatonin": 40,
+   "oxytocin": 40,
+   "endorphins": 40,
+   "energy_sex": 45,
+   "appetite": 62
+  }
+ },
+ "label": "Typical educational example, not a diagnosis.",
+ "helpTips": {
+  "anxious": [
+   "tip_breathing_10",
+   "tip_salah_calm",
+   "tip_walk_30"
+  ],
+  "cant_sleep": [
+   "tip_avoid_night_caffeine",
+   "tip_avoid_late_scroll",
+   "tip_sleep_78"
+  ],
+  "low_energy": [
+   "tip_walk_30",
+   "tip_sun_15",
+   "tip_tryptophan_meal"
+  ],
+  "post_workout_glow": [
+   "tip_nuts_water",
+   "tip_sleep_78",
+   "tip_hug_kind"
+  ],
+  "lonely_weekend": [
+   "tip_hug_kind",
+   "tip_walk_30",
+   "tip_laugh"
+  ],
+  "exam_panic": [
+   "tip_breathing_10",
+   "tip_avoid_night_caffeine",
+   "tip_dhikr_10"
+  ]
+ }
+}

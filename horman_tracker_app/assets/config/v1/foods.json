@@ -1,0 +1,279 @@
+{
+ "configVersion": "1.0.0",
+ "review": "pending_no_doctor",
+ "foods": [
+  {
+   "id": "qahwa_arabi",
+   "portion_en": "1 dallah cup",
+   "portion_ar": "فنجان قهوة عربي",
+   "deltas": {
+    "dopamine": 3,
+    "melatonin": -3
+   },
+   "i18nKey": "food_qahwa_arabi"
+  },
+  {
+   "id": "turkish_coffee",
+   "portion_en": "1 cup",
+   "portion_ar": "فنجان واحد",
+   "deltas": {
+    "dopamine": 4,
+    "adrenaline": 4,
+    "melatonin": -4
+   },
+   "i18nKey": "food_turkish_coffee"
+  },
+  {
+   "id": "shai_masry",
+   "portion_en": "1 glass",
+   "portion_ar": "كوباية واحدة",
+   "deltas": {
+    "dopamine": 2,
+    "adrenaline": 2
+   },
+   "i18nKey": "food_shai_masry"
+  },
+  {
+   "id": "karkadeh_cold",
+   "portion_en": "1 glass unsweetened",
+   "portion_ar": "كوباية من غير سكر",
+   "deltas": {
+    "cortisol": -3
+   },
+   "i18nKey": "food_karkadeh_cold"
+  },
+  {
+   "id": "sobia",
+   "portion_en": "1 glass",
+   "portion_ar": "كوباية واحدة",
+   "deltas": {
+    "serotonin": 3,
+    "appetite": 5
+   },
+   "delayed3h": {
+    "serotonin": -3
+   },
+   "i18nKey": "food_sobia"
+  },
+  {
+   "id": "qamar_deen",
+   "portion_en": "1 glass",
+   "portion_ar": "كوباية واحدة",
+   "deltas": {
+    "serotonin": 3,
+    "appetite": 5
+   },
+   "delayed3h": {
+    "serotonin": -3
+   },
+   "i18nKey": "food_qamar_deen"
+  },
+  {
+   "id": "dates_3",
+   "portion_en": "3 pcs",
+   "portion_ar": "3 حبات",
+   "deltas": {
+    "serotonin": 3,
+    "appetite": 3
+   },
+   "i18nKey": "food_dates_3"
+  },
+  {
+   "id": "koshary",
+   "portion_en": "medium plate",
+   "portion_ar": "طبق وسط",
+   "deltas": {
+    "serotonin": 5,
+    "appetite": 7
+   },
+   "i18nKey": "food_koshary"
+  },
+  {
+   "id": "foul_taamiya",
+   "portion_en": "1 serving",
+   "portion_ar": "وجبة واحدة",
+   "deltas": {
+    "dopamine": 4,
+    "serotonin": 3,
+    "appetite": -6
+   },
+   "i18nKey": "food_foul_taamiya"
+  },
+  {
+   "id": "shawarma",
+   "portion_en": "1 sandwich",
+   "portion_ar": "ساندوتش واحد",
+   "deltas": {
+    "dopamine": 4,
+    "appetite": -5
+   },
+   "i18nKey": "food_shawarma"
+  },
+  {
+   "id": "grilled_chicken_rice",
+   "portion_en": "1 serving",
+   "portion_ar": "وجبة واحدة",
+   "deltas": {
+    "dopamine": 4,
+    "serotonin": 4,
+    "appetite": -5
+   },
+   "i18nKey": "food_grilled_chicken_rice"
+  },
+  {
+   "id": "fish_grilled",
+   "portion_en": "1 serving",
+   "portion_ar": "وجبة واحدة",
+   "deltas": {
+    "serotonin": 4,
+    "dopamine": 3,
+    "appetite": -5
+   },
+   "i18nKey": "food_fish_grilled"
+  },
+  {
+   "id": "eggs_dairy",
+   "portion_en": "1 serving",
+   "portion_ar": "وجبة واحدة",
+   "deltas": {
+    "serotonin": 4,
+    "dopamine": 4,
+    "appetite": -4
+   },
+   "i18nKey": "food_eggs_dairy"
+  },
+  {
+   "id": "nuts_mix",
+   "portion_en": "1 handful",
+   "portion_ar": "حفنة واحدة",
+   "deltas": {
+    "serotonin": 3,
+    "appetite": -6
+   },
+   "i18nKey": "food_nuts_mix"
+  },
+  {
+   "id": "veggies_fruit",
+   "portion_en": "1 serving",
+   "portion_ar": "حصة واحدة",
+   "deltas": {
+    "serotonin": 4,
+    "appetite": -3
+   },
+   "i18nKey": "food_veggies_fruit"
+  },
+  {
+   "id": "dark_chocolate",
+   "portion_en": "20g",
+   "portion_ar": "20 جرام",
+   "deltas": {
+    "serotonin": 3,
+    "endorphins": 3
+   },
+   "i18nKey": "food_dark_chocolate"
+  },
+  {
+   "id": "honey_spoon",
+   "portion_en": "1 spoon",
+   "portion_ar": "معلقة واحدة",
+   "deltas": {
+    "serotonin": 2,
+    "appetite": 3
+   },
+   "i18nKey": "food_honey_spoon"
+  },
+  {
+   "id": "soda",
+   "portion_en": "1 can",
+   "portion_ar": "كان واحدة",
+   "deltas": {
+    "dopamine": 3,
+    "appetite": 8
+   },
+   "delayed3h": {
+    "dopamine": -5,
+    "serotonin": -3
+   },
+   "i18nKey": "food_soda"
+  },
+  {
+   "id": "fast_food_burger",
+   "portion_en": "1 meal",
+   "portion_ar": "وجبة واحدة",
+   "deltas": {
+    "dopamine": 4,
+    "appetite": 8,
+    "cortisol": 2
+   },
+   "delayed3h": {
+    "dopamine": -4
+   },
+   "i18nKey": "food_fast_food_burger"
+  },
+  {
+   "id": "molokhia_rice",
+   "portion_en": "1 serving",
+   "portion_ar": "وجبة واحدة",
+   "deltas": {
+    "serotonin": 4,
+    "appetite": -5
+   },
+   "i18nKey": "food_molokhia_rice"
+  },
+  {
+   "id": "mahshi",
+   "portion_en": "1 serving",
+   "portion_ar": "وجبة واحدة",
+   "deltas": {
+    "serotonin": 4,
+    "appetite": 6
+   },
+   "i18nKey": "food_mahshi"
+  },
+  {
+   "id": "lentil_soup",
+   "portion_en": "1 bowl",
+   "portion_ar": "طبق واحد",
+   "deltas": {
+    "serotonin": 5,
+    "appetite": -6
+   },
+   "i18nKey": "food_lentil_soup"
+  },
+  {
+   "id": "yogurt_laban",
+   "portion_en": "1 cup",
+   "portion_ar": "كوباية واحدة",
+   "deltas": {
+    "serotonin": 3,
+    "appetite": -3
+   },
+   "i18nKey": "food_yogurt_laban"
+  },
+  {
+   "id": "water_2L",
+   "portion_en": "2L through day",
+   "portion_ar": "2 لتر على مدار اليوم",
+   "deltas": {
+    "cortisol": -3,
+    "dopamine": 3
+   },
+   "i18nKey": "food_water_2L"
+  },
+  {
+   "id": "energy_drink",
+   "portion_en": "1 can",
+   "portion_ar": "كان واحدة",
+   "deltas": {
+    "adrenaline": 8,
+    "dopamine": 4,
+    "cortisol": 6,
+    "melatonin": -8
+   },
+   "delayed3h": {
+    "dopamine": -5
+   },
+   "i18nKey": "food_energy_drink"
+  }
+ ]
+}
