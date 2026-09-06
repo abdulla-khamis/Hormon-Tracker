@@ -1,15 +1,36 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import 'config_models.dart';
 
 /// Loads all versioned JSON config from assets/config/v1.
 /// Single entry point so no screen ever parses JSON itself.
+/// Result is cached for the process lifetime: config is immutable per
+/// launch, so reloading per screen is pure waste — and repeated
+/// binary-messenger loads across widget tests are flaky.
 class AppConfigLoader {
   const AppConfigLoader._();
 
   static const _base = 'assets/config/v1';
+
+  /// Cached VALUE (not Future): a Future completed in one FakeAsync zone
+  /// never delivers callbacks registered in another zone, which hangs
+  /// every widget test after the first. Returning the value from an async
+  /// function mints a fresh, same-zone Future every call.
+  static AppConfigBundle? _cache;
+
+  static Future<AppConfigBundle> load() async {
+    final hit = _cache;
+    if (hit != null) return hit;
+    final bundle = await _loadUncached();
+    _cache = bundle;
+    return bundle;
+  }
+
+  @visibleForTesting
+  static void clearCache() => _cache = null;
 
   static Future<Map<String, dynamic>> _read(String file) async {
     final raw = await rootBundle.loadString('$_base/$file');
@@ -24,7 +45,7 @@ class AppConfigLoader {
     };
   }
 
-  static Future<AppConfigBundle> load() async {
+  static Future<AppConfigBundle> _loadUncached() async {
     final hormonesJson = await _read('hormones.json');
     final activitiesJson = await _read('activities.json');
     final foodsJson = await _read('foods.json');

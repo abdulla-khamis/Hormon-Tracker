@@ -21,6 +21,7 @@ No code yet. No assumptions. Everything here must be validated by the owner + me
 - `13_AUTH_AND_GUEST_MODE.md` - Login optional, guest-first auth, upgrade with zero data loss.
 - `14_MENA_HABITS_AND_FOODS_CONFIG_DRAFT.md` - 12 habits + 25 MENA foods draft (owner approved direction).
 - `15_COSTS_AND_MONETIZATION_AND_LAUNCH.md` - Free-first-month costs + launch plan.
+- `16_PRIVACY_POLICY_DRAFT.md` - Store privacy text draft (needs owner email + URL).
 
 ## Golden Principles
 

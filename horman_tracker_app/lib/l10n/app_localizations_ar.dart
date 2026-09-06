@@ -352,4 +352,43 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get support_body => 'لو حاسس بخطر أو أعراض مقلقة كلم دكتور أو الخط الساخن في بلدك.';
+
+  @override
+  String get health_sync => 'مزامنة الصحة';
+
+  @override
+  String get health_why_title => 'ليه نربط؟';
+
+  @override
+  String get health_why_body => 'النوم والخطوات والتمارين بتحسن التقدير. بيانات الصحة مش بتخرج من جهازك.';
+
+  @override
+  String get health_allow => 'سماح';
+
+  @override
+  String get health_skip => 'تخطي';
+
+  @override
+  String get health_unavailable => 'بيانات الصحة غير متاحة على الجهاز ده.';
+
+  @override
+  String get health_denied => 'التصريح مرفوض — التسجيل اليدوي شغال كامل.';
+
+  @override
+  String get health_synced => 'اتزامن';
+
+  @override
+  String get methods_title => 'إزاي بنحسب التقدير';
+
+  @override
+  String get methods_p1 => 'الدرجات مؤشرات توازن من 0-100 وليست تحليل معمل. تحليل الدم وحده هو اللي بيقيس الهرمونات.';
+
+  @override
+  String get methods_p2 => 'كل عادة بتبدأ من 50 وبتحرك نقاط بسيطة حسب أبحاث منشورة عن نمط الحياة.';
+
+  @override
+  String get methods_p3 => 'بيانات الصحة (النوم والخطوات والتمارين) بتتلخص على جهازك ولا ترفع أبداً.';
+
+  @override
+  String get methods_p4 => 'لو الحزن أو الإرهاق أو لخبطة الدورة استمرت أكتر من أسبوعين راجع دكتور.';
 }

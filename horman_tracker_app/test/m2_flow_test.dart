@@ -12,6 +12,7 @@ Future<void> _enterHome(WidgetTester tester) async {
   await tester.pumpWidget(const HormanTrackerApp());
   await tester.pump(const Duration(seconds: 1));
   await tester.tap(find.text('Continue as Guest'));
+  await pumpUntilGone(tester, find.text('Continue as Guest'));
   await pumpUntilFound(tester, find.text('Log my day'));
 }
 
@@ -44,6 +45,7 @@ void main() {
       findsOneWidget,
     );
     expect(find.text('What helps'), findsOneWidget);
-    expect(find.text('Need help now?'), findsOneWidget);
+    // Support card shows on both library (below) and detail (above).
+    expect(find.text('Need help now?'), findsWidgets);
   });
 }

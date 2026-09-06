@@ -352,4 +352,43 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get support_body => 'If you feel unsafe or have worrying symptoms, contact a doctor or your local helpline.';
+
+  @override
+  String get health_sync => 'Sync health';
+
+  @override
+  String get health_why_title => 'Why connect?';
+
+  @override
+  String get health_why_body => 'Sleep, steps and workouts tune your estimate. Health data never leaves this device.';
+
+  @override
+  String get health_allow => 'Allow';
+
+  @override
+  String get health_skip => 'Skip';
+
+  @override
+  String get health_unavailable => 'Health data unavailable on this device.';
+
+  @override
+  String get health_denied => 'Permission denied — manual logging still works fully.';
+
+  @override
+  String get health_synced => 'Synced';
+
+  @override
+  String get methods_title => 'How estimates work';
+
+  @override
+  String get methods_p1 => 'Scores are 0-100 balance trends, not lab values. Only a blood test measures hormones.';
+
+  @override
+  String get methods_p2 => 'Every habit starts from 50 and moves a few points, based on published lifestyle research.';
+
+  @override
+  String get methods_p3 => 'Health data (sleep, steps, workouts) is summarized on your device and never uploaded.';
+
+  @override
+  String get methods_p4 => 'If low mood, fatigue or cycle changes last over 2 weeks, see a doctor.';
 }

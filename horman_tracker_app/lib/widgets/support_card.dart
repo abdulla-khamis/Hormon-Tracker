@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:horman_tracker_app/data/local/guest_store.dart';
 import 'package:horman_tracker_app/l10n/app_localizations.dart';
 
 /// Always-visible safety card. Uses helpline numbers from app_config.json —

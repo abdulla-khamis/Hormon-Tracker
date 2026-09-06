@@ -1,0 +1,10 @@
+# Splash config. White background + owner HT mark (has white bg, blends in).
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: assets/images/app_icon_source.png
+  android_12:
+    image: assets/images/app_icon_source.png
+    icon_background_color: "#FFFFFF"
+  ios: true
+  android: true
+  web: false

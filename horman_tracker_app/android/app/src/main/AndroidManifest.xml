@@ -1,6 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Read-only health access (Health Connect + legacy Google Fit paths).
+         All samples are summarized on-device; nothing is uploaded. -->
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
+    <uses-permission android:name="android.permission.health.READ_STEPS"/>
+    <uses-permission android:name="android.permission.health.READ_SLEEP"/>
+    <uses-permission android:name="android.permission.health.READ_EXERCISE"/>
     <application
-        android:label="horman_tracker_app"
+        android:label="Hormon Tracker"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

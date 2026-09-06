@@ -784,6 +784,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'If you feel unsafe or have worrying symptoms, contact a doctor or your local helpline.'**
   String get support_body;
+
+  /// No description provided for @health_sync.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync health'**
+  String get health_sync;
+
+  /// No description provided for @health_why_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Why connect?'**
+  String get health_why_title;
+
+  /// No description provided for @health_why_body.
+  ///
+  /// In en, this message translates to:
+  /// **'Sleep, steps and workouts tune your estimate. Health data never leaves this device.'**
+  String get health_why_body;
+
+  /// No description provided for @health_allow.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow'**
+  String get health_allow;
+
+  /// No description provided for @health_skip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get health_skip;
+
+  /// No description provided for @health_unavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Health data unavailable on this device.'**
+  String get health_unavailable;
+
+  /// No description provided for @health_denied.
+  ///
+  /// In en, this message translates to:
+  /// **'Permission denied — manual logging still works fully.'**
+  String get health_denied;
+
+  /// No description provided for @health_synced.
+  ///
+  /// In en, this message translates to:
+  /// **'Synced'**
+  String get health_synced;
+
+  /// No description provided for @methods_title.
+  ///
+  /// In en, this message translates to:
+  /// **'How estimates work'**
+  String get methods_title;
+
+  /// No description provided for @methods_p1.
+  ///
+  /// In en, this message translates to:
+  /// **'Scores are 0-100 balance trends, not lab values. Only a blood test measures hormones.'**
+  String get methods_p1;
+
+  /// No description provided for @methods_p2.
+  ///
+  /// In en, this message translates to:
+  /// **'Every habit starts from 50 and moves a few points, based on published lifestyle research.'**
+  String get methods_p2;
+
+  /// No description provided for @methods_p3.
+  ///
+  /// In en, this message translates to:
+  /// **'Health data (sleep, steps, workouts) is summarized on your device and never uploaded.'**
+  String get methods_p3;
+
+  /// No description provided for @methods_p4.
+  ///
+  /// In en, this message translates to:
+  /// **'If low mood, fatigue or cycle changes last over 2 weeks, see a doctor.'**
+  String get methods_p4;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

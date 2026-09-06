@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:horman_tracker_app/features/info/methods_screen.dart';
 import 'package:horman_tracker_app/l10n/app_localizations.dart';
 
 /// Settings screen. Owns the app language switch (no dedicated language
@@ -42,6 +43,14 @@ class SettingsScreen extends StatelessWidget {
             ),
           ),
           const Divider(),
+          ListTile(
+            leading: const Icon(Icons.science_outlined),
+            title: Text(strings.methods_title),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const MethodsScreen()),
+            ),
+          ),
           ListTile(
             leading: const Icon(Icons.person_outline),
             title: Text(strings.settings_guest_mode),

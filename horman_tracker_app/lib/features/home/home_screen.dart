@@ -5,6 +5,7 @@ import 'package:horman_tracker_app/core/engine/engine_from_config.dart';
 import 'package:horman_tracker_app/core/engine/estimation_engine.dart';
 import 'package:horman_tracker_app/core/engine/hormone_estimate.dart';
 import 'package:horman_tracker_app/core/l10n/config_labels.dart';
+import 'package:horman_tracker_app/data/health/health_service.dart';
 import 'package:horman_tracker_app/data/local/guest_store.dart';
 import 'package:horman_tracker_app/features/checkin/check_in_screen.dart';
 import 'package:horman_tracker_app/features/hormone_detail/hormone_detail_screen.dart';
@@ -37,6 +38,8 @@ class _HomeScreenState extends State<HomeScreen> {
   EstimationEngine? _engine;
   DailyLogInput _todayLog = const DailyLogInput();
   DailyEstimate? _estimate;
+  HealthSummary? _health;
+  String? _healthNote;
 
   @override
   void initState() {
@@ -53,8 +56,59 @@ class _HomeScreenState extends State<HomeScreen> {
       _bundle = bundle;
       _engine = engine;
       if (saved != null) _todayLog = saved;
-      _estimate = engine.compute(_todayLog);
+      _estimate = engine.compute(_todayLog, health: _health);
     });
+  }
+
+  void _recompute() {
+    if (_engine == null) return;
+    setState(() {
+      _estimate = _engine!.compute(_todayLog, health: _health);
+    });
+  }
+
+  Future<void> _syncHealth() async {
+    final strings = AppLocalizations.of(context)!;
+    final allow = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(strings.health_why_title),
+        content: Text(strings.health_why_body),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: Text(strings.health_skip),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: Text(strings.health_allow),
+          ),
+        ],
+      ),
+    );
+    if (allow != true || !mounted) return;
+    final result = await const HealthService().requestAndFetchLastDay();
+    if (!mounted) return;
+    switch (result.status) {
+      case HealthSyncStatus.granted:
+        _health = result.summary;
+        final hours = result.summary?.sleepHours;
+        _healthNote = hours == null
+            ? strings.health_synced
+            : '${strings.health_synced} • ${hours.toStringAsFixed(1)}h';
+        _recompute();
+      case HealthSyncStatus.denied:
+        _showSnack(strings.health_denied);
+      case HealthSyncStatus.unavailable:
+        _showSnack(strings.health_unavailable);
+    }
+    setState(() {});
+  }
+
+  void _showSnack(String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(message)),
+    );
   }
 
   void _openSettings() {
@@ -77,7 +131,7 @@ class _HomeScreenState extends State<HomeScreen> {
     await GuestStore.instance.saveTodayLog(result);
     setState(() {
       _todayLog = result;
-      _estimate = _engine!.compute(result);
+      _estimate = _engine!.compute(result, health: _health);
     });
   }
 
@@ -96,6 +150,11 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text(strings.app_title),
         centerTitle: true,
         actions: [
+          IconButton(
+            tooltip: strings.health_sync,
+            icon: const Icon(Icons.sync_outlined),
+            onPressed: _syncHealth,
+          ),
           IconButton(
             tooltip: strings.settings_title,
             icon: const Icon(Icons.settings_outlined),
@@ -125,6 +184,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
+                  if (_healthNote != null) ...[
+                    const SizedBox(height: 4),
+                    Text(
+                      _healthNote!,
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                  ],
                   const SizedBox(height: 12),
                   HormoneBalanceChart(
                     bars: [
