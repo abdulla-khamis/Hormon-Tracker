@@ -11,7 +11,37 @@
   "cant_sleep",
   "motivated",
   "calm",
-  "energetic"
+  "energetic",
+  "exhausted",
+  "stressed",
+  "bored",
+  "lonely",
+  "grateful",
+  "hopeful",
+  "angry",
+  "restless",
+  "focused",
+  "relaxed",
+  "interested",
+  "excited",
+  "inspired",
+  "determined",
+  "strong",
+  "proud",
+  "attentive",
+  "surprised",
+  "relieved",
+  "loved",
+  "guilty",
+  "ashamed",
+  "disgusted",
+  "jealous",
+  "hopeless",
+  "helpless",
+  "hurt",
+  "rejected",
+  "hungry",
+  "sick"
  ],
  "typicalPatterns": {
   "anxious": {
@@ -23,8 +53,9 @@
    "oxytocin": 40,
    "endorphins": 42,
    "melatonin": 45,
-   "energy_sex": 48,
-   "appetite": 60
+   "appetite": 60,
+   "testosterone": 46,
+   "estrogen": 48
   },
   "cant_sleep": {
    "melatonin": 25,
@@ -35,20 +66,22 @@
    "gaba": 35,
    "oxytocin": 45,
    "endorphins": 45,
-   "energy_sex": 48,
-   "appetite": 58
+   "appetite": 58,
+   "testosterone": 46,
+   "estrogen": 48
   },
   "low_energy": {
    "dopamine": 30,
    "serotonin": 35,
    "endorphins": 32,
    "cortisol": 55,
-   "energy_sex": 35,
    "melatonin": 45,
    "oxytocin": 45,
    "gaba": 45,
    "adrenaline": 40,
-   "appetite": 55
+   "appetite": 55,
+   "testosterone": 33,
+   "estrogen": 35
   },
   "post_workout_glow": {
    "endorphins": 85,
@@ -58,9 +91,10 @@
    "gaba": 65,
    "oxytocin": 60,
    "melatonin": 55,
-   "energy_sex": 68,
    "adrenaline": 45,
-   "appetite": 45
+   "appetite": 45,
+   "testosterone": 66,
+   "estrogen": 68
   },
   "lonely_weekend": {
    "oxytocin": 28,
@@ -70,9 +104,10 @@
    "cortisol": 60,
    "gaba": 45,
    "melatonin": 48,
-   "energy_sex": 45,
    "adrenaline": 45,
-   "appetite": 55
+   "appetite": 55,
+   "testosterone": 43,
+   "estrogen": 45
   },
   "exam_panic": {
    "cortisol": 88,
@@ -83,8 +118,9 @@
    "melatonin": 40,
    "oxytocin": 40,
    "endorphins": 40,
-   "energy_sex": 45,
-   "appetite": 62
+   "appetite": 62,
+   "testosterone": 43,
+   "estrogen": 45
   }
  },
  "label": "Typical educational example, not a diagnosis.",

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:horman_tracker_app/core/config/config_models.dart';
 import 'package:horman_tracker_app/core/engine/hormone_estimate.dart';
 import 'package:horman_tracker_app/core/l10n/config_labels.dart';
+import 'package:horman_tracker_app/core/theme/app_spacing.dart';
 import 'package:horman_tracker_app/l10n/app_localizations.dart';
 import 'package:horman_tracker_app/widgets/config_icon_mapper.dart';
 
@@ -62,7 +63,7 @@ class _CheckInScreenState extends State<CheckInScreen> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(16),
+            padding: AppSpacing.pagePadding,
             child: Text(
               titles[_step],
               style: Theme.of(context).textTheme.titleLarge,
@@ -70,10 +71,12 @@ class _CheckInScreenState extends State<CheckInScreen> {
           ),
           Expanded(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppSpacing.lg,
+              ),
               child: Wrap(
-                spacing: 8,
-                runSpacing: 8,
+                spacing: AppSpacing.sm,
+                runSpacing: AppSpacing.sm,
                 children: [
                   if (_step == 0)
                     for (final id in widget.config.feelings)
@@ -85,7 +88,8 @@ class _CheckInScreenState extends State<CheckInScreen> {
                   if (_step == 1)
                     for (final a in widget.config.activities)
                       FilterChip(
-                        avatar: Icon(configIcon(a.icon), size: 18),
+                        avatar:
+                            Icon(configIcon(a.icon), size: AppSpacing.iconSm),
                         label: Text(configLabel(strings, a.i18nKey)),
                         selected: _activities.contains(a.id),
                         onSelected: (_) => _toggle(_activities, a.id),
@@ -102,7 +106,7 @@ class _CheckInScreenState extends State<CheckInScreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(16),
+            padding: AppSpacing.pagePadding,
             child: Row(
               children: [
                 if (_step > 0)

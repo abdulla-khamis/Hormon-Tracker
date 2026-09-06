@@ -26,5 +26,7 @@ IconData configIcon(String name) => switch (name) {
       'work' => Icons.work_outline,
       'mosque' => Icons.mosque_outlined,
       'ramadan' => Icons.nights_stay_outlined,
+      'trending_up' => Icons.trending_up,
+      'waves' => Icons.waves,
       _ => Icons.circle_outlined,
     };

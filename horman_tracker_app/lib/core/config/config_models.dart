@@ -133,6 +133,13 @@ class AppConfigBundle {
   Map<String, TipDef> get tipById => {for (final t in tips) t.id: t};
   HormoneDef hormoneById(String id) =>
       hormones.firstWhere((h) => h.id == id);
+
+  /// Display order stripped of ids missing from [hormones], so a stale
+  /// config can never crash the chart with firstWhere StateError.
+  List<String> get validDisplayOrder {
+    final known = {for (final h in hormones) h.id};
+    return [for (final id in displayOrder) if (known.contains(id)) id];
+  }
 }
 
 /// One rebalance tip from tips.json. Text lives in JSON (reviewed copy),

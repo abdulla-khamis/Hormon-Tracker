@@ -269,6 +269,36 @@ abstract class AppLocalizations {
   /// **'Version'**
   String get settings_version;
 
+  /// No description provided for @settings_version_value.
+  ///
+  /// In en, this message translates to:
+  /// **'Version 1.0.0 (M0)'**
+  String get settings_version_value;
+
+  /// No description provided for @settings_sex.
+  ///
+  /// In en, this message translates to:
+  /// **'Sex'**
+  String get settings_sex;
+
+  /// No description provided for @sex_male.
+  ///
+  /// In en, this message translates to:
+  /// **'Male'**
+  String get sex_male;
+
+  /// No description provided for @sex_female.
+  ///
+  /// In en, this message translates to:
+  /// **'Female'**
+  String get sex_female;
+
+  /// No description provided for @sex_unset.
+  ///
+  /// In en, this message translates to:
+  /// **'Prefer not to say'**
+  String get sex_unset;
+
   /// No description provided for @hormone_dopamine.
   ///
   /// In en, this message translates to:
@@ -305,11 +335,17 @@ abstract class AppLocalizations {
   /// **'Melatonin'**
   String get hormone_melatonin;
 
-  /// No description provided for @hormone_energy_sex.
+  /// No description provided for @hormone_testosterone.
   ///
   /// In en, this message translates to:
-  /// **'Energy balance'**
-  String get hormone_energy_sex;
+  /// **'Testosterone'**
+  String get hormone_testosterone;
+
+  /// No description provided for @hormone_estrogen.
+  ///
+  /// In en, this message translates to:
+  /// **'Estrogen'**
+  String get hormone_estrogen;
 
   /// No description provided for @hormone_appetite.
   ///
@@ -436,6 +472,186 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Energetic'**
   String get feeling_energetic;
+
+  /// No description provided for @feeling_exhausted.
+  ///
+  /// In en, this message translates to:
+  /// **'Exhausted'**
+  String get feeling_exhausted;
+
+  /// No description provided for @feeling_stressed.
+  ///
+  /// In en, this message translates to:
+  /// **'Stressed'**
+  String get feeling_stressed;
+
+  /// No description provided for @feeling_bored.
+  ///
+  /// In en, this message translates to:
+  /// **'Bored'**
+  String get feeling_bored;
+
+  /// No description provided for @feeling_lonely.
+  ///
+  /// In en, this message translates to:
+  /// **'Lonely'**
+  String get feeling_lonely;
+
+  /// No description provided for @feeling_grateful.
+  ///
+  /// In en, this message translates to:
+  /// **'Grateful'**
+  String get feeling_grateful;
+
+  /// No description provided for @feeling_hopeful.
+  ///
+  /// In en, this message translates to:
+  /// **'Hopeful'**
+  String get feeling_hopeful;
+
+  /// No description provided for @feeling_angry.
+  ///
+  /// In en, this message translates to:
+  /// **'Angry'**
+  String get feeling_angry;
+
+  /// No description provided for @feeling_restless.
+  ///
+  /// In en, this message translates to:
+  /// **'Restless'**
+  String get feeling_restless;
+
+  /// No description provided for @feeling_focused.
+  ///
+  /// In en, this message translates to:
+  /// **'Focused'**
+  String get feeling_focused;
+
+  /// No description provided for @feeling_relaxed.
+  ///
+  /// In en, this message translates to:
+  /// **'Relaxed'**
+  String get feeling_relaxed;
+
+  /// No description provided for @feeling_interested.
+  ///
+  /// In en, this message translates to:
+  /// **'Interested'**
+  String get feeling_interested;
+
+  /// No description provided for @feeling_excited.
+  ///
+  /// In en, this message translates to:
+  /// **'Excited'**
+  String get feeling_excited;
+
+  /// No description provided for @feeling_inspired.
+  ///
+  /// In en, this message translates to:
+  /// **'Inspired'**
+  String get feeling_inspired;
+
+  /// No description provided for @feeling_determined.
+  ///
+  /// In en, this message translates to:
+  /// **'Determined'**
+  String get feeling_determined;
+
+  /// No description provided for @feeling_strong.
+  ///
+  /// In en, this message translates to:
+  /// **'Strong'**
+  String get feeling_strong;
+
+  /// No description provided for @feeling_proud.
+  ///
+  /// In en, this message translates to:
+  /// **'Proud'**
+  String get feeling_proud;
+
+  /// No description provided for @feeling_attentive.
+  ///
+  /// In en, this message translates to:
+  /// **'Attentive'**
+  String get feeling_attentive;
+
+  /// No description provided for @feeling_surprised.
+  ///
+  /// In en, this message translates to:
+  /// **'Surprised'**
+  String get feeling_surprised;
+
+  /// No description provided for @feeling_relieved.
+  ///
+  /// In en, this message translates to:
+  /// **'Relieved'**
+  String get feeling_relieved;
+
+  /// No description provided for @feeling_loved.
+  ///
+  /// In en, this message translates to:
+  /// **'Loved'**
+  String get feeling_loved;
+
+  /// No description provided for @feeling_guilty.
+  ///
+  /// In en, this message translates to:
+  /// **'Guilty'**
+  String get feeling_guilty;
+
+  /// No description provided for @feeling_ashamed.
+  ///
+  /// In en, this message translates to:
+  /// **'Ashamed'**
+  String get feeling_ashamed;
+
+  /// No description provided for @feeling_disgusted.
+  ///
+  /// In en, this message translates to:
+  /// **'Disgusted'**
+  String get feeling_disgusted;
+
+  /// No description provided for @feeling_jealous.
+  ///
+  /// In en, this message translates to:
+  /// **'Jealous'**
+  String get feeling_jealous;
+
+  /// No description provided for @feeling_hopeless.
+  ///
+  /// In en, this message translates to:
+  /// **'Hopeless'**
+  String get feeling_hopeless;
+
+  /// No description provided for @feeling_helpless.
+  ///
+  /// In en, this message translates to:
+  /// **'Helpless'**
+  String get feeling_helpless;
+
+  /// No description provided for @feeling_hurt.
+  ///
+  /// In en, this message translates to:
+  /// **'Hurt'**
+  String get feeling_hurt;
+
+  /// No description provided for @feeling_rejected.
+  ///
+  /// In en, this message translates to:
+  /// **'Rejected'**
+  String get feeling_rejected;
+
+  /// No description provided for @feeling_hungry.
+  ///
+  /// In en, this message translates to:
+  /// **'Hungry'**
+  String get feeling_hungry;
+
+  /// No description provided for @feeling_sick.
+  ///
+  /// In en, this message translates to:
+  /// **'Sick'**
+  String get feeling_sick;
 
   /// No description provided for @act_sleep_good.
   ///
@@ -772,18 +988,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Exam panic'**
   String get pattern_exam_panic;
-
-  /// No description provided for @support_title.
-  ///
-  /// In en, this message translates to:
-  /// **'Need help now?'**
-  String get support_title;
-
-  /// No description provided for @support_body.
-  ///
-  /// In en, this message translates to:
-  /// **'If you feel unsafe or have worrying symptoms, contact a doctor or your local helpline.'**
-  String get support_body;
 
   /// No description provided for @health_sync.
   ///

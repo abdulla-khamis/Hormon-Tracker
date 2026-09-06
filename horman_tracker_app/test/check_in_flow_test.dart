@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:horman_tracker_app/app.dart';
 import 'package:horman_tracker_app/features/checkin/check_in_screen.dart';
@@ -44,5 +45,25 @@ void main() {
     // Back home: estimate updated, why-chips visible.
     expect(find.byType(CheckInScreen), findsNothing);
     expect(find.text('Why?'), findsOneWidget);
+  });
+
+  testWidgets('Feelings step offers the extended 20-feeling set',
+      (tester) async {
+    await tester.pumpWidget(const HormanTrackerApp());
+    await tester.pump(const Duration(seconds: 1));
+    await tester.tap(find.text('Continue as Guest'));
+    await _stepPumps(tester);
+
+    await tester.tap(find.text('Log my day'));
+    await _stepPumps(tester);
+    expect(find.byType(CheckInScreen), findsOneWidget);
+
+    expect(find.byType(FilterChip), findsNWidgets(40));
+    for (final label in ['Exhausted', 'Grateful', 'Bored', 'Relaxed']) {
+      expect(find.text(label), findsOneWidget);
+    }
+    for (final label in ['Guilty', 'Proud', 'Hungry', 'Relieved']) {
+      expect(find.text(label), findsOneWidget);
+    }
   });
 }

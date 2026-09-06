@@ -96,6 +96,21 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settings_version => 'الإصدار';
 
   @override
+  String get settings_version_value => 'الإصدار 1.0.0 (M0)';
+
+  @override
+  String get settings_sex => 'النوع';
+
+  @override
+  String get sex_male => 'ذكر';
+
+  @override
+  String get sex_female => 'أنثى';
+
+  @override
+  String get sex_unset => 'أفضل عدم الذكر';
+
+  @override
   String get hormone_dopamine => 'دوبامين';
 
   @override
@@ -114,7 +129,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get hormone_melatonin => 'ميلاتونين';
 
   @override
-  String get hormone_energy_sex => 'توازن الطاقة';
+  String get hormone_testosterone => 'تستوستيرون';
+
+  @override
+  String get hormone_estrogen => 'إستروجين';
 
   @override
   String get hormone_appetite => 'توازن الشهية';
@@ -178,6 +196,96 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get feeling_energetic => 'نشيط';
+
+  @override
+  String get feeling_exhausted => 'مرهق';
+
+  @override
+  String get feeling_stressed => 'مضغوط';
+
+  @override
+  String get feeling_bored => 'زهقان';
+
+  @override
+  String get feeling_lonely => 'وحيد';
+
+  @override
+  String get feeling_grateful => 'ممتن';
+
+  @override
+  String get feeling_hopeful => 'متفائل';
+
+  @override
+  String get feeling_angry => 'متضايق';
+
+  @override
+  String get feeling_restless => 'متوتر';
+
+  @override
+  String get feeling_focused => 'مركز';
+
+  @override
+  String get feeling_relaxed => 'مسترخي';
+
+  @override
+  String get feeling_interested => 'مهتم';
+
+  @override
+  String get feeling_excited => 'مبسوط';
+
+  @override
+  String get feeling_inspired => 'ملهم';
+
+  @override
+  String get feeling_determined => 'مصمم';
+
+  @override
+  String get feeling_strong => 'قوي';
+
+  @override
+  String get feeling_proud => 'فخور';
+
+  @override
+  String get feeling_attentive => 'منتبه';
+
+  @override
+  String get feeling_surprised => 'متفاجئ';
+
+  @override
+  String get feeling_relieved => 'مرتاح';
+
+  @override
+  String get feeling_loved => 'محبوب';
+
+  @override
+  String get feeling_guilty => 'حاسس بالذنب';
+
+  @override
+  String get feeling_ashamed => 'مكسوف';
+
+  @override
+  String get feeling_disgusted => 'قرفان';
+
+  @override
+  String get feeling_jealous => 'غيران';
+
+  @override
+  String get feeling_hopeless => 'يائس';
+
+  @override
+  String get feeling_helpless => 'عاجز';
+
+  @override
+  String get feeling_hurt => 'مجروح';
+
+  @override
+  String get feeling_rejected => 'مرفوض';
+
+  @override
+  String get feeling_hungry => 'جعان';
+
+  @override
+  String get feeling_sick => 'عيان';
 
   @override
   String get act_sleep_good => 'نوم جيد 7-9 ساعات';
@@ -346,12 +454,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get pattern_exam_panic => 'توتر امتحانات';
-
-  @override
-  String get support_title => 'محتاج مساعدة دلوقتي؟';
-
-  @override
-  String get support_body => 'لو حاسس بخطر أو أعراض مقلقة كلم دكتور أو الخط الساخن في بلدك.';
 
   @override
   String get health_sync => 'مزامنة الصحة';

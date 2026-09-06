@@ -18,7 +18,8 @@ Source: Harvard Health (feel-good hormones, 2024), Cleveland Clinic (happy hormo
 | endorphins | Endorphins | إندورفين | natural pain relief, euphoria after effort | Vigorous exercise, laughter, dancing, massage, dark chocolate (modest) |
 | cortisol | Cortisol (Stress hormone) | الكورتيزول (هرمون التوتر) | alertness; chronic high = anxiety, belly fat, bad sleep | Chronic stress/sleep loss/caffeine raise; mindfulness, breathing, prayer, nature, sleep hygiene, moderate exercise lower; follows circadian: peak 6-7am, lowest midnight |
 | melatonin | Melatonin | ميلاتونين | sleep onset, circadian rhythm | Darkness triggers; screen light at night suppresses; regular sleep/wake + Fajr routine + sunlight morning help; fasting shifts rhythm |
-| energy_sex | Testosterone / Estrogen balance | توازن التستوستيرون / الإستروجين | energy, libido, strength, cycle mood | Sleep 7-9h, resistance training, healthy fats, obesity/stress/alcohol disrupt; female cycle phases change baseline — must be cycle-aware, never diagnose |
+| energy_sex_T | Testosterone | تستوستيرون | drive, strength, vitality | Sleep 7-9h, resistance training, healthy fats; smoking/stress disrupt |
+| energy_sex_E | Estrogen | إستروجين | mood, cycle, vitality balance | Sleep regularity, stress control; chronic stress/sleep loss disrupt |
 
 Advanced (V1+, education only, no lab claim):
 - Hunger group (MVP per owner): Insulin / Ghrelin / Leptin visualized as one "Appetite Balance" cluster or 3 mini-bars (UX to confirm, same chart component).
@@ -52,6 +53,6 @@ Owner state (2026-09-05): NO doctor reviewer available. Therefore NO-DOCTOR MODE
 - [ ] Deltas capped ±8, only strong/moderate evidence rows ship; preliminary rows show "early evidence" badge or stay hidden behind `show_preliminary:false`.
 - [ ] Every tip links to sourceId (§11) + evidenceLevel; no doses, no lab-unit claims, no disease promises.
 - [ ] Legal medical disclaimer in ar/en on first launch + detail screens + PDF (lawyer/owner approved, not doctor).
-- [ ] Red-flag list → immediate "seek care" card + country hotlines (config).
+- [ ] Safety surfaces: first-launch disclaimer + Methods & Limits page + per-screen estimate note (no SOS section per owner lock).
 - [ ] Public "Methods & Limits" page in-app: we estimate trends, labs are truth, see doctor for symptoms.
 - [ ] Future: recruit endocrinologist + psychiatrist before any diagnostic/lab-integration claim (V2 gate).

@@ -6,6 +6,7 @@ Violating any rule = PR rejected. CI enforces.
 1.1. No literal UI strings in code. Use `context.l10n.key` / `S.of(context)`. Keys in `lib/l10n/en.arb`, `ar.arb`.
 1.2. No hormone/activity/food/tip names, descriptions, deltas, thresholds in code. Load from `assets/config/v1/*.json` via `ConfigRepo` + Remote override.
 1.3. No color hex, font size, radius, spacing in widgets. Use `AppTheme.of(context).colors/spacing/typography`. Themes in `core/theme/app_tokens.dart` + `light_theme.dart` + `dark_theme.dart`.
+Implemented as `lib/core/theme/`: `app_colors.dart` (brand + chart semantic colors + resolver), `app_spacing.dart` (xxs→xxl, radii, icon sizes, bar heights, page/card padding), `app_durations.dart` (animations), `app_assets.dart` (image paths), `app_constants.dart` (storage keys, language options). Screens/widgets reference tokens only — verified by grep (zero `Colors.`/hex/raw-size literals outside tokens).
 1.4. No image path strings scattered. Use `AppAssets` constants + config-driven icon names.
 1.5. No API URLs, keys in code. Use `--dart-define` + env + backend config. Secrets in native keystore, never git.
 1.6. Dates/numbers formatted via `intl` with locale, Hijri via helper, never manual `${day}/${month}`.

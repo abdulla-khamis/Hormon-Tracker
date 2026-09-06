@@ -96,6 +96,21 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settings_version => 'Version';
 
   @override
+  String get settings_version_value => 'Version 1.0.0 (M0)';
+
+  @override
+  String get settings_sex => 'Sex';
+
+  @override
+  String get sex_male => 'Male';
+
+  @override
+  String get sex_female => 'Female';
+
+  @override
+  String get sex_unset => 'Prefer not to say';
+
+  @override
   String get hormone_dopamine => 'Dopamine';
 
   @override
@@ -114,7 +129,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get hormone_melatonin => 'Melatonin';
 
   @override
-  String get hormone_energy_sex => 'Energy balance';
+  String get hormone_testosterone => 'Testosterone';
+
+  @override
+  String get hormone_estrogen => 'Estrogen';
 
   @override
   String get hormone_appetite => 'Appetite balance';
@@ -178,6 +196,96 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get feeling_energetic => 'Energetic';
+
+  @override
+  String get feeling_exhausted => 'Exhausted';
+
+  @override
+  String get feeling_stressed => 'Stressed';
+
+  @override
+  String get feeling_bored => 'Bored';
+
+  @override
+  String get feeling_lonely => 'Lonely';
+
+  @override
+  String get feeling_grateful => 'Grateful';
+
+  @override
+  String get feeling_hopeful => 'Hopeful';
+
+  @override
+  String get feeling_angry => 'Angry';
+
+  @override
+  String get feeling_restless => 'Restless';
+
+  @override
+  String get feeling_focused => 'Focused';
+
+  @override
+  String get feeling_relaxed => 'Relaxed';
+
+  @override
+  String get feeling_interested => 'Interested';
+
+  @override
+  String get feeling_excited => 'Excited';
+
+  @override
+  String get feeling_inspired => 'Inspired';
+
+  @override
+  String get feeling_determined => 'Determined';
+
+  @override
+  String get feeling_strong => 'Strong';
+
+  @override
+  String get feeling_proud => 'Proud';
+
+  @override
+  String get feeling_attentive => 'Attentive';
+
+  @override
+  String get feeling_surprised => 'Surprised';
+
+  @override
+  String get feeling_relieved => 'Relieved';
+
+  @override
+  String get feeling_loved => 'Loved';
+
+  @override
+  String get feeling_guilty => 'Guilty';
+
+  @override
+  String get feeling_ashamed => 'Ashamed';
+
+  @override
+  String get feeling_disgusted => 'Disgusted';
+
+  @override
+  String get feeling_jealous => 'Jealous';
+
+  @override
+  String get feeling_hopeless => 'Hopeless';
+
+  @override
+  String get feeling_helpless => 'Helpless';
+
+  @override
+  String get feeling_hurt => 'Hurt';
+
+  @override
+  String get feeling_rejected => 'Rejected';
+
+  @override
+  String get feeling_hungry => 'Hungry';
+
+  @override
+  String get feeling_sick => 'Sick';
 
   @override
   String get act_sleep_good => 'Good sleep 7-9h';
@@ -346,12 +454,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get pattern_exam_panic => 'Exam panic';
-
-  @override
-  String get support_title => 'Need help now?';
-
-  @override
-  String get support_body => 'If you feel unsafe or have worrying symptoms, contact a doctor or your local helpline.';
 
   @override
   String get health_sync => 'Sync health';

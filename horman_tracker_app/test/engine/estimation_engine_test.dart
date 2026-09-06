@@ -88,4 +88,24 @@ void main() {
     );
     expect(manual.scores['cortisol']!.score, 58); // no double count
   });
+
+  test('Sex applies a tiny documented nudge to sex hormones only', () {
+    EstimationEngine engine() => EstimationEngine(
+          hormoneIds: const ['testosterone', 'estrogen', 'cortisol'],
+          activityDeltas: const {},
+          foodDeltas: const {},
+          baseline: 50,
+          lowMax: 40,
+          balancedMax: 70,
+        );
+    final male = engine().compute(const DailyLogInput(), sex: 'male');
+    expect(male.scores['testosterone']!.score, 52);
+    expect(male.scores['estrogen']!.score, 48);
+    expect(male.scores['cortisol']!.score, 50);
+    final female = engine().compute(const DailyLogInput(), sex: 'female');
+    expect(female.scores['estrogen']!.score, 52);
+    expect(female.scores['testosterone']!.score, 48);
+    final unset = engine().compute(const DailyLogInput());
+    expect(unset.scores['testosterone']!.score, 50);
+  });
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:horman_tracker_app/core/theme/app_spacing.dart';
 import 'package:horman_tracker_app/l10n/app_localizations.dart';
 
 /// Methods & Limits: honest one-pager on what estimates are (and are not).
@@ -19,7 +20,7 @@ class MethodsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(strings.methods_title)),
       body: ListView(
-        padding: const EdgeInsets.all(16),
+        padding: AppSpacing.pagePadding,
         children: [
           for (final p in points) ...[
             Row(
@@ -29,7 +30,7 @@ class MethodsScreen extends StatelessWidget {
                 Expanded(child: Text(p)),
               ],
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: AppSpacing.md),
           ],
         ],
       ),

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:horman_tracker_app/core/config/config_models.dart';
 import 'package:horman_tracker_app/core/engine/hormone_estimate.dart';
 import 'package:horman_tracker_app/core/l10n/config_labels.dart';
+import 'package:horman_tracker_app/core/theme/app_spacing.dart';
 import 'package:horman_tracker_app/data/local/guest_store.dart';
 import 'package:horman_tracker_app/l10n/app_localizations.dart';
-import 'package:horman_tracker_app/widgets/support_card.dart';
 import 'package:horman_tracker_app/widgets/tip_card.dart';
 
 /// Detail for one hormone: what it does, your estimate, and rebalance tips
@@ -56,22 +56,23 @@ class _HormoneDetailScreenState extends State<HormoneDetailScreen> {
     return Scaffold(
       appBar: AppBar(title: Text(configLabel(strings, hormone.i18nKey))),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
+        padding: AppSpacing.pagePadding,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(isArabic ? hormone.descriptionAr : hormone.descriptionEn),
-            const SizedBox(height: 16),
+            const SizedBox(height: AppSpacing.lg),
             for (final type in sectionOrder)
               if (tips.any((t) => t.type == type)) ...[
                 Text(
                   _sectionTitle(strings, type),
                   style: Theme.of(context).textTheme.titleSmall,
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: AppSpacing.sm),
                 for (final tip in tips.where((t) => t.type == type))
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 8),
+                    padding:
+                        const EdgeInsets.only(bottom: AppSpacing.sm),
                     child: TipCard(
                       tip: tip,
                       feedback: _feedback[tip.id],
@@ -84,10 +85,9 @@ class _HormoneDetailScreenState extends State<HormoneDetailScreen> {
                       },
                     ),
                   ),
-                const SizedBox(height: 8),
+                const SizedBox(height: AppSpacing.sm),
               ],
-            SupportCard(hotlines: widget.bundle.flags.redFlagHotlines),
-            const SizedBox(height: 16),
+            const SizedBox(height: AppSpacing.sm),
             Text(
               strings.disclaimer_estimate_only,
               style: Theme.of(context).textTheme.bodySmall,

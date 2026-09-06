@@ -5,6 +5,7 @@ import 'package:horman_tracker_app/core/engine/engine_from_config.dart';
 import 'package:horman_tracker_app/core/engine/estimation_engine.dart';
 import 'package:horman_tracker_app/core/engine/hormone_estimate.dart';
 import 'package:horman_tracker_app/core/l10n/config_labels.dart';
+import 'package:horman_tracker_app/core/theme/app_spacing.dart';
 import 'package:horman_tracker_app/data/health/health_service.dart';
 import 'package:horman_tracker_app/data/local/guest_store.dart';
 import 'package:horman_tracker_app/features/checkin/check_in_screen.dart';
@@ -40,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
   DailyEstimate? _estimate;
   HealthSummary? _health;
   String? _healthNote;
+  String _sex = 'unset';
 
   @override
   void initState() {
@@ -51,19 +53,21 @@ class _HomeScreenState extends State<HomeScreen> {
     final bundle = await AppConfigLoader.load();
     final saved = GuestStore.instance.loadTodayLog();
     final engine = engineFromBundle(bundle);
+    final sex = GuestStore.instance.loadSex();
     if (!mounted) return;
     setState(() {
       _bundle = bundle;
       _engine = engine;
+      _sex = sex;
       if (saved != null) _todayLog = saved;
-      _estimate = engine.compute(_todayLog, health: _health);
+      _estimate = engine.compute(_todayLog, health: _health, sex: _sex);
     });
   }
 
   void _recompute() {
     if (_engine == null) return;
     setState(() {
-      _estimate = _engine!.compute(_todayLog, health: _health);
+      _estimate = _engine!.compute(_todayLog, health: _health, sex: _sex);
     });
   }
 
@@ -117,6 +121,13 @@ class _HomeScreenState extends State<HomeScreen> {
         builder: (_) => SettingsScreen(
           currentLocale: widget.currentLocale,
           onSwitchLanguage: widget.onSwitchLanguage,
+          currentSex: _sex,
+          onSexChanged: (sex) async {
+            await GuestStore.instance.saveSex(sex);
+            if (!mounted) return;
+            setState(() => _sex = sex);
+            _recompute();
+          },
         ),
       ),
     );
@@ -131,7 +142,7 @@ class _HomeScreenState extends State<HomeScreen> {
     await GuestStore.instance.saveTodayLog(result);
     setState(() {
       _todayLog = result;
-      _estimate = _engine!.compute(result, health: _health);
+      _estimate = _engine!.compute(result, health: _health, sex: _sex);
     });
   }
 
@@ -165,7 +176,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: _bundle == null || _estimate == null
           ? const Center(child: CircularProgressIndicator())
           : SingleChildScrollView(
-              padding: const EdgeInsets.all(16),
+              padding: AppSpacing.pagePadding,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -185,16 +196,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                   if (_healthNote != null) ...[
-                    const SizedBox(height: 4),
+                    const SizedBox(height: AppSpacing.xs),
                     Text(
                       _healthNote!,
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
                   ],
-                  const SizedBox(height: 12),
+                  const SizedBox(height: AppSpacing.md),
                   HormoneBalanceChart(
                     bars: [
-                      for (final id in _bundle!.displayOrder)
+                      for (final id in _bundle!.validDisplayOrder)
                         ChartBarData(
                           hormoneId: id,
                           label: configLabel(
@@ -221,7 +232,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTapBar: (hormoneId) =>
                         _openHormoneDetail(hormoneId),
                   ),
-                  const SizedBox(height: 12),
+                  const SizedBox(height: AppSpacing.md),
                   if (_todayLog.selectionCount == 0)
                     Text(
                       strings.home_empty_hint,
@@ -232,28 +243,28 @@ class _HomeScreenState extends State<HomeScreen> {
                       strings.home_why_title,
                       style: Theme.of(context).textTheme.titleSmall,
                     ),
-                    const SizedBox(height: 6),
+                    const SizedBox(height: AppSpacing.sm),
                     Wrap(
-                      spacing: 8,
+                      spacing: AppSpacing.sm,
                       children: [
                         for (final id in _whyContributorIds())
                           Chip(label: Text(_contributorLabel(strings, id))),
                       ],
                     ),
                   ],
-                  const SizedBox(height: 16),
+                  const SizedBox(height: AppSpacing.lg),
                   FilledButton.icon(
                     onPressed: _openCheckIn,
                     icon: const Icon(Icons.add),
                     label: Text(strings.home_log_day),
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: AppSpacing.sm),
                   FilledButton.tonalIcon(
                     onPressed: _openLibrary,
                     icon: const Icon(Icons.mood_outlined),
                     label: Text(strings.library_title),
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: AppSpacing.lg),
                   Text(
                     strings.disclaimer_estimate_only,
                     style: Theme.of(context).textTheme.bodySmall,

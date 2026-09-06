@@ -25,6 +25,10 @@
 - Riat et al., Front Nutr 2021 (17-18h Germany): cortisol ↓ 1wk post then baseline, BDNF ↓ end-Ramadan, mood/QoL ↑. https://doi.org/10.3389/fnut.2021.697920
 - Chennaoui et al. 2009 athletes: fatigue↑ IL-6↑ adrenaline/noradrenaline↑ melatonin↓ MAV↓, recovered 1wk post. https://doi.org/10.1139/h09-014
 
+## Feelings Taxonomy (check-in set)
+- Plutchik, R. (1980): 8 primaries (joy/sadness, anger/fear, trust/disgust, surprise/anticipation) + dyads (love, guilt, pride, envy, shame, hope, despair...). https://en.wikipedia.org/wiki/Plutchik%27s_Wheel_of_Emotions
+- Watson, Clark & Tellegen (1988) PANAS: 20 validated affect markers (interested... proud / distressed... afraid) + PANAS-X (shyness, fatigue, serenity, surprise). https://www.toolshero.com/psychology/panas-scale/
+
 ## Technical
 - Apple HealthKit docs (HealthKit.md) — permissions, HKCategory sleep, HRV, workouts, mindfulness.
 - Android Health Connect — steps/sleep/exercise/HR permissions, Jetpack Health library.

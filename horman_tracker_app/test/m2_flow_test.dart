@@ -26,7 +26,6 @@ void main() {
     expect(find.byType(HormoneDetailScreen), findsOneWidget);
     expect(find.text('Do'), findsOneWidget);
     expect(find.text('Avoid'), findsOneWidget);
-    expect(find.text('Need help now?'), findsOneWidget);
   });
 
   testWidgets('Library pattern shows demo note and helping tips',
@@ -45,7 +44,5 @@ void main() {
       findsOneWidget,
     );
     expect(find.text('What helps'), findsOneWidget);
-    // Support card shows on both library (below) and detail (above).
-    expect(find.text('Need help now?'), findsWidgets);
   });
 }

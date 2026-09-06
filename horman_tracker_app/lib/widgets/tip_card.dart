@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:horman_tracker_app/core/config/config_models.dart';
+import 'package:horman_tracker_app/core/theme/app_spacing.dart';
 import 'package:horman_tracker_app/l10n/app_localizations.dart';
 
 /// One rebalance tip with evidence badge and helpful/not-helpful feedback.
@@ -29,12 +30,12 @@ class TipCard extends StatelessWidget {
 
     return Card(
       child: Padding(
-        padding: const EdgeInsets.all(12),
+        padding: AppSpacing.cardPadding,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(isArabic ? tip.textAr : tip.textEn),
-            const SizedBox(height: 8),
+            const SizedBox(height: AppSpacing.sm),
             Row(
               children: [
                 Chip(

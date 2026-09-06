@@ -42,9 +42,9 @@ Enter → understand in 10 seconds → act in 60 seconds. Friendly, no fear, lot
 - Weekly curves (same chart style, line mode), streaks (sleep, movement, prayer logging — no guilt design), correlation cards: "When you walk + pray Fajr, your next-day calm is +18% (n=12 days)".
 - Export PDF for doctor (estimated trends + inputs, with disclaimer watermark).
 
-### G. Safety Intercepts
-- Red flags (suicidal ideation, chest pain, fainting, severe depression >2wks, cycle absent 3mo, galactorrhea, etc.) → full-screen care card: "Please seek care now" + hotlines (config per country) + disable tips.
-- Persistent out-of-balance >14 days → "Consider lab check + doctor" nudge.
+### G. Safety (No SOS Section Per Owner Lock)
+- No SOS/helpline section anywhere in the app. Safety = first-launch disclaimer + Methods & Limits page + per-screen estimate disclaimer.
+- Profile sex (male/female/unset) in Settings applies a tiny documented baseline nudge (±2) to sex hormones only.
 
 ## Navigation (Bottom Tabs, RTL-aware)
 Home (bars) | Log (+) center FAB | Library (feel-states) | Insights (history) | Settings/Profile.

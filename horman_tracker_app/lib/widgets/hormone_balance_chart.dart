@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:horman_tracker_app/core/theme/app_colors.dart';
+import 'package:horman_tracker_app/core/theme/app_durations.dart';
+import 'package:horman_tracker_app/core/theme/app_spacing.dart';
 
 import '../core/engine/hormone_estimate.dart';
 
@@ -29,7 +32,7 @@ class HormoneBalanceChart extends StatelessWidget {
     required this.bars,
     required this.statusLabels,
     this.onTapBar,
-    this.maxBarHeight = 150,
+    this.maxBarHeight = AppSpacing.barMaxHeight,
   });
 
   final List<ChartBarData> bars;
@@ -37,65 +40,106 @@ class HormoneBalanceChart extends StatelessWidget {
   final void Function(String hormoneId)? onTapBar;
   final double maxBarHeight;
 
-  Color _barColor(BuildContext context, ChartBarData bar) {
-    final scheme = Theme.of(context).colorScheme;
-    return switch (bar.status) {
-      BarStatus.low => Colors.blue,
-      BarStatus.balanced => Colors.green,
-      BarStatus.high => bar.invert ? scheme.error : Colors.amber.shade700,
-    };
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final row = Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            for (final bar in bars)
+              Expanded(
+                child: Semantics(
+                  button: true,
+                  label: '${bar.label}: ${bar.score.round()}',
+                  child: InkWell(
+                    onTap: onTapBar == null
+                        ? null
+                        : () => onTapBar!(bar.hormoneId),
+                    child: _BarColumn(
+                      bar: bar,
+                      maxBarHeight: maxBarHeight,
+                      statusLabels: statusLabels,
+                    ),
+                  ),
+                ),
+              ),
+          ],
+        );
+        // Narrow screens (11 bars): scroll instead of squeezing text.
+        final minNeeded = bars.length * AppSpacing.minChartBarWidth;
+        if (constraints.maxWidth.isFinite &&
+            constraints.maxWidth < minNeeded) {
+          return SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: SizedBox(
+              width: minNeeded,
+              child: row,
+            ),
+          );
+        }
+        return row;
+      },
+    );
   }
+}
+
+/// Single bar column, extracted so the scroll fallback reuses it.
+class _BarColumn extends StatelessWidget {
+  const _BarColumn({
+    required this.bar,
+    required this.maxBarHeight,
+    required this.statusLabels,
+  });
+
+  final ChartBarData bar;
+  final double maxBarHeight;
+  final Map<BarStatus, String> statusLabels;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.end,
+    final color = AppColors.chartBarColor(
+      bar.status,
+      invert: bar.invert,
+      errorColor: Theme.of(context).colorScheme.error,
+    );
+    return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
-        for (final bar in bars)
-          Expanded(
-            child: InkWell(
-              onTap: onTapBar == null ? null : () => onTapBar!(bar.hormoneId),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    '${bar.score.round()}',
-                    style: Theme.of(context).textTheme.labelLarge,
-                  ),
-                  const SizedBox(height: 4),
-                  TweenAnimationBuilder<double>(
-                    tween: Tween(begin: 0, end: bar.score / 100),
-                    duration: const Duration(milliseconds: 600),
-                    builder: (context, fraction, _) => Container(
-                      height: 8 + fraction * maxBarHeight,
-                      margin: const EdgeInsets.symmetric(horizontal: 4),
-                      decoration: BoxDecoration(
-                        color: _barColor(context, bar),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 6),
-                  Icon(bar.icon, size: 20),
-                  const SizedBox(height: 2),
-                  Text(
-                    bar.label,
-                    style: Theme.of(context).textTheme.labelSmall,
-                    textAlign: TextAlign.center,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  Text(
-                    statusLabels[bar.status] ?? '',
-                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                          color: _barColor(context, bar),
-                          fontWeight: FontWeight.bold,
-                        ),
-                  ),
-                ],
-              ),
+        Text(
+          '${bar.score.round()}',
+          style: Theme.of(context).textTheme.labelLarge,
+        ),
+        const SizedBox(height: AppSpacing.xs),
+        TweenAnimationBuilder<double>(
+          tween: Tween(begin: 0, end: bar.score / 100),
+          duration: AppDurations.barAnimation,
+          builder: (context, fraction, _) => Container(
+            height: AppSpacing.barMinHeight + fraction * maxBarHeight,
+            margin: const EdgeInsets.symmetric(horizontal: AppSpacing.xs),
+            decoration: BoxDecoration(
+              color: color,
+              borderRadius: BorderRadius.circular(AppSpacing.radiusSm),
             ),
           ),
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        Icon(bar.icon, size: AppSpacing.iconMd),
+        const SizedBox(height: AppSpacing.xxs),
+        Text(
+          bar.label,
+          style: Theme.of(context).textTheme.labelSmall,
+          textAlign: TextAlign.center,
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+        ),
+        Text(
+          statusLabels[bar.status] ?? '',
+          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                color: color,
+                fontWeight: FontWeight.bold,
+              ),
+        ),
       ],
     );
   }

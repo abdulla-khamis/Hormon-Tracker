@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:horman_tracker_app/core/theme/app_colors.dart';
 import 'package:horman_tracker_app/l10n/app_localizations.dart';
 import 'features/auth/login_screen.dart';
 import 'features/home/home_screen.dart';
-
-/// Brand purple sampled from the owner logo.
-const Color _brandPurple = Color(0xFF7C5CBF);
 
 /// Root widget of Hormon Tracker.
 /// Launch flow: [LoginScreen] first (guest-first) -> [HomeScreen].
@@ -38,9 +36,9 @@ class _HormanTrackerAppState extends State<HormanTrackerApp> {
       locale: _currentLocale,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      theme: ThemeData(colorSchemeSeed: _brandPurple, useMaterial3: true),
+      theme: ThemeData(colorSchemeSeed: AppColors.brandPurple, useMaterial3: true),
       darkTheme: ThemeData(
-        colorSchemeSeed: _brandPurple,
+        colorSchemeSeed: AppColors.brandPurple,
         brightness: Brightness.dark,
         useMaterial3: true,
       ),

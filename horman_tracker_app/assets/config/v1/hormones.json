@@ -1,1 +1,108 @@
-{"configVersion":"1.0.0","engineVersion":"engine_v1","review":"pending_no_doctor","hormones":[{"id":"dopamine","i18nKey":"hormone_dopamine","icon":"bolt","invert":false,"description_en":"Motivation, reward and focus. Spikes with novelty, then crashes with excess sugar or endless scrolling.","description_ar":"الدافع والمكافأة والتركيز. يرتفع مع الجديد والمكافآت، ثم يهبط مع السكر الزائد أو التصفح المتواصل."},{"id":"serotonin","i18nKey":"hormone_serotonin","icon":"wb_sunny","invert":false,"description_en":"Calm and mood stability. Sunlight, movement and steady meals support it.","description_ar":"الهدوء واستقرار المزاج. تدعمه الشمس والحركة والأكل المنتظم."},{"id":"oxytocin","i18nKey":"hormone_oxytocin","icon":"favorite","invert":false,"description_en":"Bonding and trust. Rises with hugs, kindness and time with loved ones.","description_ar":"الترابط والثقة. يرتفع مع الحضن واللطف والوقت مع الأحبة."},{"id":"endorphins","i18nKey":"hormone_endorphins","icon":"directions_run","invert":false,"description_en":"Natural pain relief and post-effort glow. Released by vigorous movement and laughter.","description_ar":"مسكن طبيعي وإحساس الانتعاش بعد المجهود. تفرزه الحركة القوية والضحك."},{"id":"cortisol","i18nKey":"hormone_cortisol","icon":"speed","invert":true,"description_en":"Alertness hormone. Healthy in the morning, harmful when high all day from stress or short sleep.","description_ar":"هرمون اليقظة. صحي صباحاً، وضار لو مرتفع طوال اليوم بسبب التوتر أو قلة النوم."},{"id":"melatonin","i18nKey":"hormone_melatonin","icon":"bedtime","invert":false,"description_en":"Sleep-rhythm signal. Rises in darkness; late screens and sahar suppress it.","description_ar":"إشارة إيقاع النوم. يرتفع في الظلام؛ الشاشات المتأخرة والسهر يضعفانه."},{"id":"energy_sex","i18nKey":"hormone_energy_sex","icon":"monitor_heart","invert":false,"description_en":"Energy and vitality balance (testosterone/estrogen). Supported by full sleep and resistance training.","description_ar":"توازن الطاقة والحيوية (تستوستيرون/إستروجين). يدعمه النوم الكافي وتمارين المقاومة."},{"id":"appetite","i18nKey":"hormone_appetite","icon":"restaurant","invert":true,"description_en":"Hunger/satiety balance (ghrelin/leptin/insulin). Short sleep and sugary drinks disturb it.","description_ar":"توازن الجوع والشبع (جريلين/لبتين/إنسولين). قلة النوم والمشروبات المسكرة تربكه."},{"id":"adrenaline","i18nKey":"hormone_adrenaline","icon":"flash_on","invert":true,"description_en":"Fight-or-flight sparks. Useful briefly; draining when triggered all day by caffeine, stress or competitive gaming.","description_ar":"شرارات الكر والفر. مفيدة للحظات؛ ومرهقة لو اشتعلت طوال اليوم بالكافيين أو التوتر أو الجيمينج التنافسي."},{"id":"gaba","i18nKey":"hormone_gaba","icon":"self_improvement","invert":false,"description_en":"The calm brake. Supported by slow breathing, prayer, nature and steady sleep.","description_ar":"مكابح الهدوء. يدعمها التنفس البطيء والصلاة والطبيعة والنوم المنتظم."}],"displayOrder":["dopamine","serotonin","oxytocin","endorphins","cortisol","melatonin","energy_sex","appetite","adrenaline","gaba"]}
+{
+ "configVersion": "1.0.0",
+ "engineVersion": "engine_v1",
+ "review": "pending_no_doctor",
+ "hormones": [
+  {
+   "id": "dopamine",
+   "i18nKey": "hormone_dopamine",
+   "icon": "bolt",
+   "invert": false,
+   "description_en": "Motivation, reward and focus. Spikes with novelty, then crashes with excess sugar or endless scrolling.",
+   "description_ar": "الدافع والمكافأة والتركيز. يرتفع مع الجديد والمكافآت، ثم يهبط مع السكر الزائد أو التصفح المتواصل."
+  },
+  {
+   "id": "serotonin",
+   "i18nKey": "hormone_serotonin",
+   "icon": "wb_sunny",
+   "invert": false,
+   "description_en": "Calm and mood stability. Sunlight, movement and steady meals support it.",
+   "description_ar": "الهدوء واستقرار المزاج. تدعمه الشمس والحركة والأكل المنتظم."
+  },
+  {
+   "id": "oxytocin",
+   "i18nKey": "hormone_oxytocin",
+   "icon": "favorite",
+   "invert": false,
+   "description_en": "Bonding and trust. Rises with hugs, kindness and time with loved ones.",
+   "description_ar": "الترابط والثقة. يرتفع مع الحضن واللطف والوقت مع الأحبة."
+  },
+  {
+   "id": "endorphins",
+   "i18nKey": "hormone_endorphins",
+   "icon": "directions_run",
+   "invert": false,
+   "description_en": "Natural pain relief and post-effort glow. Released by vigorous movement and laughter.",
+   "description_ar": "مسكن طبيعي وإحساس الانتعاش بعد المجهود. تفرزه الحركة القوية والضحك."
+  },
+  {
+   "id": "cortisol",
+   "i18nKey": "hormone_cortisol",
+   "icon": "speed",
+   "invert": true,
+   "description_en": "Alertness hormone. Healthy in the morning, harmful when high all day from stress or short sleep.",
+   "description_ar": "هرمون اليقظة. صحي صباحاً، وضار لو مرتفع طوال اليوم بسبب التوتر أو قلة النوم."
+  },
+  {
+   "id": "melatonin",
+   "i18nKey": "hormone_melatonin",
+   "icon": "bedtime",
+   "invert": false,
+   "description_en": "Sleep-rhythm signal. Rises in darkness; late screens and sahar suppress it.",
+   "description_ar": "إشارة إيقاع النوم. يرتفع في الظلام؛ الشاشات المتأخرة والسهر يضعفانه."
+  },
+  {
+   "id": "testosterone",
+   "i18nKey": "hormone_testosterone",
+   "icon": "trending_up",
+   "invert": false,
+   "description_en": "Drive, strength and vitality. Supported by full sleep and resistance training.",
+   "description_ar": "الطاقة والقوة والحيوية. يدعمه النوم الكافي وتمارين المقاومة."
+  },
+  {
+   "id": "estrogen",
+   "i18nKey": "hormone_estrogen",
+   "icon": "waves",
+   "invert": false,
+   "description_en": "Mood, cycle and vitality balance. Disrupted by chronic stress and poor sleep.",
+   "description_ar": "توازن المزاج والدورة والحيوية. يربكه التوتر المزمن وقلة النوم."
+  },
+  {
+   "id": "appetite",
+   "i18nKey": "hormone_appetite",
+   "icon": "restaurant",
+   "invert": true,
+   "description_en": "Hunger/satiety balance (ghrelin/leptin/insulin). Short sleep and sugary drinks disturb it.",
+   "description_ar": "توازن الجوع والشبع (جريلين/لبتين/إنسولين). قلة النوم والمشروبات المسكرة تربكه."
+  },
+  {
+   "id": "adrenaline",
+   "i18nKey": "hormone_adrenaline",
+   "icon": "flash_on",
+   "invert": true,
+   "description_en": "Fight-or-flight sparks. Useful briefly; draining when triggered all day by caffeine, stress or competitive gaming.",
+   "description_ar": "شرارات الكر والفر. مفيدة للحظات؛ ومرهقة لو اشتعلت طوال اليوم بالكافيين أو التوتر أو الجيمينج التنافسي."
+  },
+  {
+   "id": "gaba",
+   "i18nKey": "hormone_gaba",
+   "icon": "self_improvement",
+   "invert": false,
+   "description_en": "The calm brake. Supported by slow breathing, prayer, nature and steady sleep.",
+   "description_ar": "مكابح الهدوء. يدعمها التنفس البطيء والصلاة والطبيعة والنوم المنتظم."
+  }
+ ],
+ "displayOrder": [
+  "dopamine",
+  "serotonin",
+  "oxytocin",
+  "endorphins",
+  "cortisol",
+  "melatonin",
+  "testosterone",
+  "estrogen",
+  "appetite",
+  "adrenaline",
+  "gaba"
+ ]
+}

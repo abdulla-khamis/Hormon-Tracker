@@ -24,7 +24,7 @@ Owner approved the proposed direction (coffee, shisha, late nights, gaming, soci
 
 Note: 15 rows above (12 + 3 worship/sport variants merged). Engine picks top 12 shown per user frequency (config `show_most_used: 12`). Smoking/shisha/sahar worded supportively, with quit/reduce tips, never judgment.
 
-Feelings multi-select (feel_states.json): anxious, low_energy, cant_focus, sad, irritable, craving_sugar, cant_sleep, motivated, calm, energetic — same 10, ar reviewed.
+Feelings multi-select (feel_states.json): 40 feelings grounded in Plutchik (1980) primaries/dyads + PANAS (Watson 1988) 20-item schedule — anxious, low_energy, cant_focus, sad, irritable, craving_sugar, cant_sleep, motivated, calm, energetic, exhausted, stressed, bored, lonely, grateful, hopeful, angry, restless, focused, relaxed, interested, excited, inspired, determined, strong, proud, attentive, surprised, relieved, loved, guilty, ashamed, disgusted, jealous, hopeless, helpless, hurt, rejected, hungry, sick (ar reviewed, Egyptian-friendly).
 
 ## B. 25 MENA Foods/Drinks (foods.json draft)
 

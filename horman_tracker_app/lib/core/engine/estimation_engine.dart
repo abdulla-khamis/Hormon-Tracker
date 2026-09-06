@@ -27,9 +27,33 @@ class EstimationEngine {
 
   static const delayedWeight = 0.5;
 
-  DailyEstimate compute(DailyLogInput log, {HealthSummary? health}) {
+  /// [sex] is 'male', 'female' or null (prefer not to say).
+  /// It applies a tiny documented baseline nudge (±2) to the sex hormones
+  /// only — educational, capped, and clearly labeled. Cycle-aware tuning
+  /// arrives in V1 with explicit opt-in.
+  DailyEstimate compute(
+    DailyLogInput log, {
+    HealthSummary? health,
+    String? sex,
+  }) {
     final totals = {for (final id in hormoneIds) id: baseline};
     final impacts = {for (final id in hormoneIds) id: <String, double>{}};
+
+    if (sex == 'male') {
+      if (totals.containsKey('testosterone')) {
+        totals['testosterone'] = totals['testosterone']! + 2;
+      }
+      if (totals.containsKey('estrogen')) {
+        totals['estrogen'] = totals['estrogen']! - 2;
+      }
+    } else if (sex == 'female') {
+      if (totals.containsKey('estrogen')) {
+        totals['estrogen'] = totals['estrogen']! + 2;
+      }
+      if (totals.containsKey('testosterone')) {
+        totals['testosterone'] = totals['testosterone']! - 2;
+      }
+    }
 
     void apply(String contributor, Map<String, double>? deltas,
         {double weight = 1}) {
